@@ -353,12 +353,12 @@ function revertIds() {
 function checkForWin() {
     const kings = Array.from(document.querySelectorAll('#king'))
     console.log(kings)
-    if(kings.some(king => king.firstChild.classList.contains('white'))) {
+    if(!kings.some(king => king.firstChild.classList.contains('white'))) {
         infoDisplay.innerHTML = "Black Player Win"
         const allSquares = document.querySelectorAll('.square')
         allSquares.forEach(square => square.firstChild?.setAttribute('draggable', false))
     }
-    if(kings.some(king => king.firstChild.classList.contains('black'))) {
+    if(!kings.some(king => king.firstChild.classList.contains('black'))) {
         infoDisplay.innerHTML = "White Player Win"
         const allSquares = document.querySelectorAll('.square')
         allSquares.forEach(square => square.firstChild?.setAttribute('draggable', false))
